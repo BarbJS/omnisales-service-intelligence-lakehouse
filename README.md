@@ -85,7 +85,7 @@ omnisales-service-intelligence-lakehouse/
 
 8. Se quiser reproduzir a orquestração, configure em Jobs & Pipelines → Create → Job quatro tasks do tipo Notebook. Faça Silver depender de Bronze, Gold depender de Silver e Qualidade depender de Gold, com execução após sucesso. Aponte as tasks para os caminhos do novo workspace; não copie caminhos pessoais do Job original. Deixe o agendamento desativado (se preferir, pode agendar) e teste manualmente depois de validar a landing zone.
 
-## ✅ Resultado e limites
+## ✅ Resultado e limitações
 O notebook analítico abordou as cinco perguntas priorizadas. Na comparação direta de satisfação, pedidos atrasados registraram avaliação média de 2,57 e 54,00% de avaliações baixas, frente a 4,39 e 3,16% nos entregues no prazo. 
 
 A análise por categoria preserva o grão de item: prazo e dias de atraso existem no grão de pedido, e pedidos com múltiplas categorias exigem uma regra explícita de atribuição antes de calcular essas médias por categoria. A distância é aproximada e não representa uma rota real. A ingestão usa dados históricos e o Job foi executado sob demanda; atualização incremental, alertas e monitoramento contínuo ficam como evoluções futuras.
