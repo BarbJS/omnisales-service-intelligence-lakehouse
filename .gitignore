@@ -1,0 +1,34 @@
+# Metadados de exportação do Databricks, não usados pelos notebooks
+manifest.mf
+**/manifest.mf
+
+# Dados brutos, intermediários e saídas tabulares
+*.csv
+*.parquet
+*.delta
+*.db
+*.sqlite
+*.zip
+*.dbc
+
+# Arquivos locais e ambientes
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.log
+
+# Credenciais e chaves
+*.pem
+*.key
+.databrickscfg
+*.secrets.*
+
+# Notebooks fonte (.py, .sql, .ipynb), configuração de setup e docs não são ignorados.
+# Arquivos já versionados exigem remoção explícita: .gitignore não os retira do histórico.

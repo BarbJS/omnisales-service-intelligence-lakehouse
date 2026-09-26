@@ -7,7 +7,7 @@ MVP acadêmico de Engenharia de Dados | Databricks Free Edition | Olist
 
 *CSV Olist → Setup: validação da landing zone → Bronze → Silver + quarentena → Gold → Qualidade → Análises de negócio*
 
-## 🎯 Problema e perguntas
+## 🎯 Contexto
 Em um marketplace, pedidos, itens, pagamentos, preços, fretes, sellers, localização, entregas e avaliações ficam distribuídos entre tabelas operacionais. Essa fragmentação dificulta relacionar faturamento e volume à confiabilidade logística e à satisfação. O MVP integra e qualifica esses dados em um Lakehouse para apoiar decisões comerciais e operacionais.
 
 As cinco perguntas priorizadas foram mantidas na redação original do projeto:
@@ -23,7 +23,7 @@ As cinco perguntas priorizadas foram mantidas na redação original do projeto:
 - Quais sellers ou categorias combinam alta receita com baixa confiabilidade logística e baixa satisfação?
 
 ## 📦 Fonte e licenças
-O projeto utiliza o Brazilian E-Commerce Public Dataset by Olist, na página original do Kaggle, uma base histórica e anonimizada de aproximadamente 100 mil pedidos realizados entre 2016 e 2018. Os dados não representam uma operação atual.
+O projeto utiliza o Brazilian E-Commerce Public Dataset by Olist, na página original do Kaggle, uma base histórica e anonimizada de aproximadamente 100 mil pedidos realizados entre 2016 e 2018. Os dados não representam uma operação atual. O dataset está disponível em: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce.
 
 A página da fonte informa a licença CC BY-NC-SA 4.0 para o dataset: atribuição, uso não comercial e compartilhamento de adaptações nos termos dessa licença. Os dados Olist não estão cobertos pela licença MIT atribuída ao código autoral deste repositório. Consulte DATA_LICENSE.md antes de redistribuir dados ou derivados. Os CSVs originais não são incluídos aqui; obtenha-os diretamente da fonte.
 
@@ -40,7 +40,7 @@ A página da fonte informa a licença CC BY-NC-SA 4.0 para o dataset: atribuiç�
 
 O Job job_omnisales_lakehouse_pipeline encadeia ``Bronze → Silver → Gold → Qualidade``. As quatro tasks concluem uma execução manual ou agendada com sucesso. O notebook de setup não é task desse Job: ele deve ser executado antes, quando a landing zone for preparada ou validada. Os notebooks de análise e governança também não fazem parte desse grafo de quatro tasks. 
 
-![Fluxo Bronze, Silver, Gold e qualidade executado com sucesso no Databricks](docs/imagens/pipeline-job.png)
+![Pipeline OmniSales: Bronze, Silver, Gold e qualidade](docs/imagens/pipeline_omnisales.png)
 
 ## 🗂️ Organização do repositório
 
@@ -60,13 +60,11 @@ omnisales-service-intelligence-lakehouse/
 │   └── 03_transformacao_silver
 ├── gold/
 │   └── 04_modelagem_gold
-├── qualidade/
+├── analises/
 │   └── 05_analise_qualidade
-├── analise/
 │   └── 06_analise_dados
 ├── governanca/
-│   └── 07_governanca_catalogo
-├── job/                       
+│   └── 07_governanca_catalogo                       
 └── docs/                      
 ```
 
@@ -94,3 +92,5 @@ A análise por categoria preserva o grão de item: prazo e dias de atraso existe
 
 ## 📄 Licenciamento
 O código e a documentação autoral estão sob a licença MIT. Os dados originais da Olist seguem os termos indicados na página da fonte, descritos em DATA_LICENSE.md. A MIT não concede direitos sobre o dataset ou outros materiais de terceiros.
+
+> A documentação completa, com o passo a passo de desenvolvimento e execução, está disponível em [Documentação do MVP OmniSales](docs/mvp_eng_dados_omnisales.pdf).
